@@ -1,1 +1,23 @@
+body {
+  display: flex;
+}
+header {
+  display: flex;
+  background-color: black;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+.logo-navbar {
+  display: flex;
+}
+.navigazione {
+  display: flex;
+}
+.logo-carrello {
+  display: flex;
+  gap: 25px;
+}
