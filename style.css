@@ -1,10 +1,9 @@
 body {
-  display: flex;
+  margin: 0;
 }
 header {
   display: flex;
   background-color: black;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
@@ -20,4 +19,61 @@ header {
 .logo-carrello {
   display: flex;
   gap: 25px;
+}
+.hero-img{
+  width: 95em;
+  height: auto;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+}
+.centro {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  width: 500px;
+  gap: 50px;
+}
+
+.gioco {
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  display: flex;
+  background-color: yellow;
+}
+.negozio-gioco {
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: green;
+}
+.negozio {
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: grey;
+}
+.api {
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: purple;
+  color: white;
+}
+.footer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: orange;
+  height: 150px;
 }
