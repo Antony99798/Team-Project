@@ -10,6 +10,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-color: #dfcbb2;
 }
 header {
   padding: 15px;
@@ -19,6 +20,7 @@ header {
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+  border-bottom: solid 5px #7b1c1c;
 }
 header p {
   color: aliceblue;
@@ -41,31 +43,42 @@ header p {
 /**/
 .hero {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  /* background-image: url(assets/copertina.jpg);
+  background-image: url(assets/copertina.jpg);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
   width: 100%;
-  flex-grow: 1;*/
+
+  background-attachment: fixed;
 }
-.hero-img {
-  display: flex;
-}
+
 .hero-descrizione {
+  padding: 20px;
+  padding-bottom: 50px;
   display: flex;
+  flex-direction: column;
   color: aliceblue;
+  width: 40%;
+  gap: 10px;
+  flex-grow: 1;
+}
+.hero-descrizione h1 {
+  margin: 0;
+}
+.hero-descrizione p {
+  margin: 0;
 }
 .centro {
   display: flex;
+  justify-content: center;
   margin-left: 100px;
   margin-right: 100px;
 }
 .main {
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
   width: 500px;
   gap: 50px;
 }
@@ -91,20 +104,33 @@ header p {
   display: flex;
   background-color: grey;
 }
-.api {
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: purple;
-  color: white;
+
+footer {
+  background-image: url(assets/footer-background.jpeg);
+  color: aliceblue;
+  padding: 25px;
+  border-top: solid 5px #7b1c1c;
 }
 .footer {
-  justify-content: center;
-  align-items: center;
   display: flex;
-  background-color: orange;
-  height: 150px;
+  flex-direction: column;
+  gap: 100px;
+}
+.lista-footer {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 50px;
+}
+.container-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .hero-img{
   width: 95em;
