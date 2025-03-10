@@ -38,25 +38,24 @@ header p {
   display: flex;
   gap: 60px;
 }
-/**/
+
 .hero {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url(assets/copertina.jpg);
+  background-image: url(assets/copertina.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  flex-grow: 1;*/
+  background-size: contain;
+  height: 500px; */
+  
 }
 .hero-img {
   display: flex;
 }
-.hero-descrizione {
+/* .hero-descrizione {
   display: flex;
   color: aliceblue;
-}
+} */
 .centro {
   display: flex;
   margin-left: 100px;
