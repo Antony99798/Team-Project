@@ -3,11 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-<body>
-    <script>
-      
-    </script>
-</body>
+    <meta name="author" content="Gruppo 2">
+    <meta name="description" content="Le cronache dell’Igrall">
+    <meta name="keywords" content="gioco da tavola, Gdr,">
+    <meta property = "og:image" src="assets/copertina_gdr.jpg">
+    <meta property = "og:description" content="Le cronache dell’Igrall">
+    <meta property = "og:title" content="Le cronache dell’Igrall">
+    <title>Le cronache dell’Igrall</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/Veliero.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-navbar">
+        <!--immagine-->
+        <img
+          src="assets/logo-gioco.jpg"
+          alt="logo gioco"
+          class="logo-gioco"
+          width="40"
+          height="40"
+        />
+        <p class="titolo-navbar">Le Cronache dell'Igrall</p>
+      </div>
+
+      <div class="loghi">
+        <div class="navigazione-container">
+          <svg
+            class="navigazione"
+            fill="#ffffff"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            enable-background="new 0 0 512 512"
+            xml:space="preserve"
+            stroke="#ffffff"
+            width="50"
+            height="50"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472 c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"
+                ></path>
+                <polygon
+                  points="224.391,224.469 231.359,196.641 144.359,144.438 196.547,231.438 "
+                ></polygon>
+                <polygon
+                  points="315.281,231.172 367.125,144 280.5,196.406 287.5,224.344 "
+                ></polygon>
+                <polygon
+                  points="287.688,287.453 280.828,315.344 368,367.219 315.469,280.391 "
+                ></polygon>
+                <polygon
+                  points="196.547,280.672 144.359,367.656 231.547,315.312 224.516,287.641 "
+                ></polygon>
+                <path
+                  d="M256,128l-25.594,102.391L128,256l102.5,25.625L256.5,384l25.234-102.547L384,255.5l-102.422-25.203L256,128z M256,272 c-8.828,0-16-7.172-16-16s7.172-16,16-16s16,7.172,16,16S264.828,272,256,272z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          <p>Naviga</p>
+        </div>
+        <div class="carrello-container">
+          <svg
+            class="carrello"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g clip-path="url(#clip0_901_1512)">
+                <path
+                  d="M8 16H2M9 20H3M7 12H1M26 16H11M25 20H12M27 12H10M10 24H27C28.125 24 28.862 23.038 29 22L31 8H6L4 1H1M13 29C13 27.896 12.104 27 11 27C9.896 27 9 27.896 9 29C9 30.104 9.896 31 11 31C12.104 31 13 30.104 13 29ZM25 29C25 27.896 24.104 27 23 27C21.896 27 21 27.896 21 29C21 30.104 21.896 31 23 31C24.104 31 25 30.104 25 29Z"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_901_1512">
+                  <rect width="32" height="32" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </g>
+          </svg>
+          <p>Carrello</p>
+        </div>
+
+        <div class="accedi-container">
+          <svg
+            class="accedi"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#ffffff"
+            width="50"
+            height="50"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  d="M14.256 21.744L12 24l-2.256-2.256C5.31 20.72 2 16.744 2 12 2 6.48 6.48 2 12 2s10 4.48 10 10c0 4.744-3.31 8.72-7.744 9.744zm-8.233-6.328C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          <p>Accedi</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="hero-img">
+          <img src="assets/copertina.jpg" style="display: flex" />
+          <div class="hero-descrizione">
+            <h1>Le Cronache dell'Igrall</h1>
+            <p>
+              Avventurati in questo leggendario gioco di ruolo fantasy e scopri
+              perché milioni di persone in tutto il mondo si sono calate nei
+              panni di potenti eroi per creare le proprie storie.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="centro">
+        <div class="main">
+          <div class="gioco">gioco</div>
+          <div class="negozio-gioco">negozio gioco</div>
+          <div class="negozio">negozio accessori</div>
+          <div class="api">API</div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">footer</div>
+    </footer>
+    <!---->
+    <script></script>
+  </body>
 </html>
