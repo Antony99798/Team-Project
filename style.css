@@ -5,7 +5,6 @@
   font-style: normal;
 }
 body {
-  margin: 0;
   font-family: "CustomFont";
   margin: 0;
   display: flex;
@@ -131,61 +130,4 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-.hero-img{
-  width: 95em;
-  height: auto;
-}
-.hero {
-  display: flex;
-  justify-content: center;
-}
-.centro {
-  display: flex;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.main {
-  display: flex;
-  flex-direction: column;
-  margin-left: 200px;
-  width: 500px;
-  gap: 50px;
-}
-
-.gioco {
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  display: flex;
-  background-color: yellow;
-}
-.negozio-gioco {
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: green;
-}
-.negozio {
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: grey;
-}
-.api {
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: purple;
-  color: white;
-}
-.footer {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: orange;
-  height: 150px;
 }
