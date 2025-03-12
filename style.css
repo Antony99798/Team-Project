@@ -14,12 +14,12 @@ body {
 header {
   padding: 15px;
   display: flex;
-  background-color: black;
+  background-image: url(assets/bg-navbar.jpeg);
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
-  border-bottom: solid 5px #7b1c1c;
+  border-bottom: solid 5px #9d0a0e;
 }
 header p {
   color: aliceblue;
@@ -40,20 +40,50 @@ header p {
   gap: 60px;
 }
 /**/
+.hero-container {
+  background-image: url(assets/bg-navbar.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  background-image: url(assets/copertina.jpg);
+  align-items: flex-end;
+  background-image: url(assets/hero-img-cut.png);
   background-size: contain;
   background-repeat: no-repeat;
+  height: 500px;
   width: 100%;
-
-  background-attachment: fixed;
+  padding: -500px;
+}
+.titolo-hero {
+  --header-color: var(--white);
+  --decor-line-color: linear-gradient(
+    90deg,
+    rgba(157, 10, 14, 0),
+    #9d0a0e,
+    #9d0a0e,
+    rgba(157, 10, 14, 0)
+  );
+  --decor-line-width: 22px;
+  --decor-line-height: 2px;
+  --decor-line-verticle-offset: 10px;
+  position: relative;
+  padding: 10px 0;
 }
 
+.titolo-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--decor-line-color);
+}
 .hero-descrizione {
+  font-size: 20px;
   padding: 20px;
   padding-bottom: 50px;
   display: flex;
@@ -63,10 +93,12 @@ header p {
   gap: 10px;
   flex-grow: 1;
 }
+
 .hero-descrizione h1 {
   margin: 0;
 }
 .hero-descrizione p {
+  font-size: 25px;
   margin: 0;
 }
 .centro {
@@ -108,12 +140,13 @@ footer {
   background-image: url(assets/footer-background.jpeg);
   color: aliceblue;
   padding: 25px;
-  border-top: solid 5px #7b1c1c;
+  border-top: solid 5px #9d0a0e;
 }
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 10px;
+  font-size: 20px;
 }
 .lista-footer {
   display: flex;
@@ -130,4 +163,94 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  --header-color: var(--white);
+  --decor-line-color: linear-gradient(
+    90deg,
+    rgba(157, 10, 14, 0),
+    #9d0a0e,
+    #9d0a0e,
+    rgba(157, 10, 14, 0)
+  );
+  --decor-line-width: 22px;
+  --decor-line-height: 2px;
+  --decor-line-verticle-offset: 10px;
+
+  position: relative;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.copyright::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--decor-line-color);
+}
+.container-contatti {
+  display: flex;
+  gap: 20px;
+}
+.veliero {
+  background-color: #dfcbb2;
+  border-radius: 5000px;
+  height: 100px;
+  width: 100px;
+}
+.logo-gioco-footer {
+  height: 72px;
+  width: 70px;
+  padding: 15px;
+}
+.loghi-immagini {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.lingua {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.lingue {
+  background-color: rgb(24, 23, 23);
+  color: white;
+  height: 30px;
+  width: 300px;
+}
+.input-lingua {
+  margin-top: 25px;
+}
+.logo-dado {
+  height: 100px;
+  width: 100px;
+}
+
+.cnt {
+  --header-color: var(--white);
+  --decor-line-color: linear-gradient(
+    90deg,
+    rgba(157, 10, 14, 0),
+    #9d0a0e,
+    #9d0a0e,
+    rgba(157, 10, 14, 0)
+  );
+  --decor-line-width: 22px;
+  --decor-line-height: 2px;
+  --decor-line-verticle-offset: 10px;
+
+  position: relative;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.cnt::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--decor-line-color);
 }
