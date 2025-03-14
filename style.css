@@ -1,1 +1,133 @@
-
+@font-face {
+    font-family: "CustomFont";
+    src: url("font/cronache.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: "CustomFont";
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #dfcbb2;
+  }
+  header {
+    padding: 15px;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid 5px #7b1c1c;
+  }
+  header p {
+    color: aliceblue;
+    margin: 0;
+  }
+  .logo-navbar {
+    display: flex;
+  }
+  .titolo-navbar {
+    color: aliceblue;
+    font-size: 40px;
+    margin: 0;
+    padding-top: 8px;
+  }
+  
+  .loghi {
+    display: flex;
+    gap: 60px;
+  }
+  /**/
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url(assets/copertina.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+  
+    background-attachment: fixed;
+  }
+  
+  .hero-descrizione {
+    padding: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    width: 40%;
+    gap: 10px;
+    flex-grow: 1;
+  }
+  .hero-descrizione h1 {
+    margin: 0;
+  }
+  .hero-descrizione p {
+    margin: 0;
+  }
+  .centro {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 50px;
+  }
+  
+  .gioco {
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    display: flex;
+    background-color: yellow;
+  }
+  .negozio-gioco {
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: green;
+  }
+  .negozio {
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: grey;
+  }
+  
+  footer {
+    background-image: url(assets/footer-background.jpeg);
+    color: aliceblue;
+    padding: 25px;
+    border-top: solid 5px #7b1c1c;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .lista-footer {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 50px;
+  }
+  .container-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
