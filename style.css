@@ -108,8 +108,6 @@ header p {
 .centro {
   display: flex;
   justify-content: center;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 .corpo {
   background-image: url(assets/mappa.jpeg);
@@ -120,30 +118,42 @@ header p {
 .main {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 90%;
   gap: 50px;
 }
 
 .gioco {
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  display: flex;
-  background-color: yellow;
+  background-image: url(assets/descrizione-gioco.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: rgb(90, 66, 7) solid 5px;
+  border-radius: 10px;
+  /* height: 500px; */
+  margin-top: 20px;
+}
+
+.gioco > p {
+  padding: 20px;
+  color: white;
+  font-size: 20px;
 }
 .negozio-gioco {
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: green;
+  background-image: url(assets/negozio-gioco.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  border: rgb(90, 66, 7) solid 5px;
+  border-radius: 10px;
 }
-.negozio {
+.negozio-accessori {
+  background-image: url(assets/negozio-gadget.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 150px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: grey;
+  border: rgb(90, 66, 7) solid 5px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 footer {
