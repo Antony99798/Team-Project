@@ -350,16 +350,16 @@
           </div>
           <div class="container-footer1">
             <ul class="lista-footer">
-              <li><div class="aboutus">About us</div></li>
-              <li><div class="artwork">Artwork</div></li>
+              <li><div id="aboutus" onclick="aboutus()">About us</div></li>
+              <li><div id="artwork" onclick="artwork()">Artwork</div></li>
             </ul>
           </div>
           <div class="container-footer2">
             <ul class="lista-footer">
               <li>
-                <div class="api">API</div>
+                <div id="api" onclick="api()">API</div>
               </li>
-              <li><div class="licenza">Licenza</div></li>
+              <li><div id="licenza" onclick="licenza()">Licenza</div></li>
             </ul>
           </div>
         </div>
@@ -381,8 +381,6 @@
     </footer>
     <!---->
 
-    <script>
-      document.getElementById("anno").textContent = new Date().getFullYear();
-    </script>
+    <script src="index.js" defer></script>
   </body>
 </html>

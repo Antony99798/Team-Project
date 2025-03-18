@@ -158,6 +158,8 @@ header p {
 
 footer {
   background-image: url(assets/footer-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: aliceblue;
   padding: 25px;
   border-top: solid 5px #9d0a0e;
@@ -281,4 +283,7 @@ footer {
   flex-direction: row;
   /* gap: 100px; */
   font-size: 25px;
+}
+.elemento-creato {
+  color: greenyellow;
 }
