@@ -14,11 +14,12 @@ function aboutus() {
     elementop.appendChild(bottone);
   }
 }
-//bottone
+
 const bottone = document.createElement("button");
 bottone.innerText = "X";
 bottone.setAttribute("id", "btn");
-bottone.setAttribute("onclick", reset);
+bottone.addEventListener("click", reset); // Assegna la funzione correttamente
+
 //
 function artwork() {
   const prendi = document.getElementById("artwork");
@@ -32,7 +33,8 @@ function artwork() {
     prendi.appendChild(elementop);
     elementop.appendChild(bottone);
   }
-}
+  }
+
 function api() {
   const prendi = document.getElementById("api");
   const elementop = document.createElement("p");
@@ -60,9 +62,9 @@ function licenza() {
   }
 }
 
+
 function reset() {
-  const prendi = document.getElementById("aboutus");
-  if (prendi.contains(elementop)) {
-    prendi.removeChild(elementop);
-  }
+  const elementop = document.querySelector(".elemento-creato")
+      elementop.innerHTML=""
 }
+
