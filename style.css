@@ -123,7 +123,7 @@ header p {
 }
 
 .gioco {
-  background-image: url(assets/descrizione\ gioco.jpeg);
+  background-image: url(assets/descrizione-gioco.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -135,7 +135,7 @@ header p {
 
 .gioco > p {
   padding: 20px;
-  color: white;
+  color: aliceblue;
   font-size: 20px;
 }
 .negozio-gioco {
@@ -238,7 +238,7 @@ footer {
 }
 .lingue {
   background-color: rgb(24, 23, 23);
-  color: white;
+  color: aliceblue;
   height: 30px;
   width: 300px;
 }
@@ -284,6 +284,34 @@ footer {
   /* gap: 100px; */
   font-size: 25px;
 }
-.elemento-creato {
-  color: greenyellow;
+
+.card-footer {
+  min-width: 150px;
+  max-width: 300px;
+  color: aliceblue;
+  background-color: rgba(83, 83, 83, 0.281);
+  border-radius: 15px;
+  border: solid 3px #9d0a0e;
+  display: flex;
+}
+.gallery-image {
+  min-width: 100px;
+  max-width: 250px;
+}
+.btn-close {
+  color: #9d0a0e;
+  background-color: #9d0a0f00;
+  border: #9d0a0f00;
+  font-size: 30px;
+}
+.gallery {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  margin: 15px;
+}
+.output-artwork {
+  justify-content: center;
 }
