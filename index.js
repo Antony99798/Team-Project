@@ -1,70 +1,58 @@
 document.getElementById("anno").textContent = new Date().getFullYear();
+// Funzione per creare il paragrafo in "About us"
+document.getElementById("aboutus").addEventListener("click", function () {
+  createParagraph("Il Gruppo2 è una classe di Develhope", "output-aboutus");
+});
 
-//aboutus
-const elementop = document.createElement("p");
-elementop.innerText = "Il Gruppo2 è una classe di Develhope";
-elementop.setAttribute("class", "elemento-creato");
+// Funzione per creare il paragrafo in "Artwork"
+document.getElementById("artwork").addEventListener("click", function () {
+  createParagraph("Contenuto di Artwork", "output-artwork");
+});
 
-function aboutus() {
-  const prendi = document.getElementById("aboutus");
+// Funzione per creare il paragrafo in "API"
+document.getElementById("api").addEventListener("click", function () {
+  createParagraph("Informazioni sulle API", "output-api");
+});
 
-  // Controlla se il paragrafo esiste già per non duplicarlo
-  if (!prendi.contains(elementop)) {
-    prendi.appendChild(elementop);
-    elementop.appendChild(bottone);
+// Funzione per creare il paragrafo in "Licenza"
+document.getElementById("licenza").addEventListener("click", function () {
+  createParagraph("Dettagli sulla licenza", "output-licenza");
+});
+
+// Funzione generica per creare il paragrafo e il bottone di chiusura
+function createParagraph(text, outputId) {
+  const container = document.getElementById(outputId);
+
+  // Se l'elemento di output non è trovato, termina la funzione
+  if (!container) {
+    console.error(`Elemento #${outputId} non trovato!`);
+    return;
   }
+
+  // Se esiste già un paragrafo dentro il container, non ne aggiunge un altro
+  if (container.querySelector(".elemento-creato")) {
+    return;
+  }
+
+  // Crea il paragrafo
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("elemento-creato");
+  paragraph.innerText = text;
+
+  // Crea il bottone di chiusura
+  const button = document.createElement("button");
+  button.classList.add("btn-close");
+  button.innerText = "X";
+
+  // Aggiunge il bottone al paragrafo
+  paragraph.appendChild(button);
+
+  // Aggiunge il paragrafo al container corrispondente
+  container.appendChild(paragraph);
+
+  // Evento per rimuovere il paragrafo quando si clicca sul bottone
+  button.addEventListener("click", function () {
+    console.log("Bottone premuto! Rimuovo il paragrafo...");
+    paragraph.remove(); // Rimuove il paragrafo
+  });
 }
-
-const bottone = document.createElement("button");
-bottone.innerText = "X";
-bottone.setAttribute("id", "btn");
-bottone.addEventListener("click", reset); // Assegna la funzione correttamente
-
-//
-function artwork() {
-  const prendi = document.getElementById("artwork");
-  const elementop = document.createElement("p");
-  elementop.innerText = "vasffanculo";
-  prendi.appendChild(elementop);
-  elementop.setAttribute("class", "elemento-creato");
-
-  // Controlla se il paragrafo esiste già per non duplicarlo
-  if (!prendi.contains(elementop)) {
-    prendi.appendChild(elementop);
-    elementop.appendChild(bottone);
-  }
-  }
-
-function api() {
-  const prendi = document.getElementById("api");
-  const elementop = document.createElement("p");
-  elementop.innerText = "stronzo";
-  prendi.appendChild(elementop);
-  elementop.setAttribute("class", "elemento-creato");
-
-  // Controlla se il paragrafo esiste già per non duplicarlo
-  if (!prendi.contains(elementop)) {
-    prendi.appendChild(elementop);
-    elementop.appendChild(bottone);
-  }
-}
-function licenza() {
-  const prendi = document.getElementById("licenza");
-  const elementop = document.createElement("p");
-  elementop.innerText = "cornuto";
-  prendi.appendChild(elementop);
-  elementop.setAttribute("class", "elemento-creato");
-
-  // Controlla se il paragrafo esiste già per non duplicarlo
-  if (!prendi.contains(elementop)) {
-    prendi.appendChild(elementop);
-    elementop.appendChild(bottone);
-  }
-}
-
-
-function reset() {
-  const elementop = document.querySelector(".elemento-creato")
-      elementop.innerHTML=""
-}
-
