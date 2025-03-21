@@ -1,5 +1,5 @@
-//data dinamica
-document.getElementById("anno").textContent = new Date().getFullYear();
+//Navbar dinamica
+
 
 // Funzione per creare il paragrafo in "About us"
 document.getElementById("aboutus").addEventListener("click", function () {
@@ -78,10 +78,10 @@ function createImageGallery(outputId) {
 
   // Array con i percorsi delle immagini
   const images = [
-    "assets./copertina.jpg",
-    "assets./descrizione-gioco.jpeg",
-    "assets./footer-background.jpeg",
-    "assets./negozio-gioco.jpeg",
+    "assets/copertina.jpg",
+    "assets/descrizione-gioco.jpeg",
+    "assets/footer-background.jpeg",
+    "assets/negozio-gioco.jpeg",
   ];
 
   // Bottone per chiudere la galleria
@@ -105,3 +105,6 @@ function createImageGallery(outputId) {
     galleryDiv.remove();
   });
 }
+
+//data dinamica
+document.getElementById("anno").textContent = new Date().getFullYear();
