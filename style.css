@@ -4,9 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
-  cursor: url("assets/cursore.png") 3px 3px, auto;
-}
+
 html {
   scroll-behavior: smooth;
 }
@@ -192,9 +190,7 @@ header p {
   justify-content: center;
 }
 .corpo {
-  background-image: url(assets/mappa.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f1f1f1;
   margin-top: 110px;
 }
 .main {
@@ -208,8 +204,7 @@ header p {
   background-image: url(assets/descrizione-gioco.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-
-  border: rgb(90, 66, 7) solid 5px;
+  border: #9d0a0e solid 5px;
   border-radius: 10px;
   /* height: 500px; */
   margin-top: 20px;
@@ -223,11 +218,7 @@ header p {
   -webkit-text-stroke: 1px rgb(174, 172, 172);
 }
 .negozio-gioco {
-  background-image: url(assets/negozio-gioco.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
-  border: rgb(90, 66, 7) solid 5px;
+  border: #9d0a0e solid 5px;
   border-radius: 10px;
 }
 .negozio-accessori {

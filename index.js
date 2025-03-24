@@ -1,6 +1,5 @@
 //Navbar dinamica
 
-
 // Funzione per creare il paragrafo in "About us"
 document.getElementById("aboutus").addEventListener("click", function () {
   createParagraph("Il Gruppo2 è una classe di Develhope", "output-aboutus");
@@ -105,6 +104,60 @@ function createImageGallery(outputId) {
     galleryDiv.remove();
   });
 }
+
+// Funzione per fare la fetch dei mostri
+
+async function fetchMonsters() {
+  try {
+    // Eseguiamo la fetch all'API dei mostri con l'endpoint fornito
+    const response = await fetch("https://www.dnd5eapi.co/api/2014/monsters");
+
+    // Controlliamo se la risposta è corretta
+    if (!response.ok) {
+      throw new Error("Errore nel recuperare i dati");
+    }
+
+    // Parliamo i dati in formato JSON
+    const data = await response.json();
+
+    // Controlliamo la struttura dei dati per capire come manipolarli
+    console.log(data); // Controlla la struttura della risposta dell'API
+
+    // Estraiamo i mostri dalla risposta
+    const monsters = data.results; // Assumiamo che i mostri siano nella proprietà 'results'
+
+    // Prendiamo solo i primi 10 mostri (se ci sono abbastanza mostri)
+    const topMonsters = monsters.slice(0, 10);
+
+    // Creiamo un contenitore per visualizzare i mostri
+    const container = document.getElementById("monster-container");
+    container.innerHTML = ""; // Pulisce il contenitore prima di aggiungere nuovi mostri
+
+    // Cicliamo su ciascun mostro e lo aggiungiamo al DOM
+    topMonsters.forEach((monster) => {
+      const monsterElement = document.createElement("div");
+      monsterElement.classList.add("monster");
+
+      const monsterName = monster.name || "Nome sconosciuto";
+      const monsterImage = monster.url || "https://via.placeholder.com/150"; // Usa un'immagine di default se manca
+
+      // Aggiungiamo il markup HTML per ciascun mostro
+      monsterElement.innerHTML = `
+        <h3>${monsterName}</h3>
+        <img url="${monsterImage}" alt="${monsterName}" width="200" />
+      `;
+      container.appendChild(monsterElement);
+    });
+  } catch (error) {
+    console.error(
+      "Si è verificato un errore durante la fetch dei mostri:",
+      error
+    );
+  }
+}
+
+// Chiamata alla funzione per fetchare e renderizzare i mostri
+fetchMonsters();
 
 //data dinamica
 document.getElementById("anno").textContent = new Date().getFullYear();
