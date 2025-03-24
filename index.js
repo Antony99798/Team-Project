@@ -106,45 +106,45 @@ function createImageGallery(outputId) {
 }
 
 // Funzione per fare la fetch dei mostri
-
 async function fetchMonsters() {
   try {
-    // Eseguiamo la fetch all'API dei mostri con l'endpoint fornito
-    const response = await fetch("https://www.dnd5eapi.co/api/2014/monsters");
+    // Eseguiamo la fetch all'API dei mostri
+    const response = await fetch("https://www.dnd5eapi.co/api/monsters");
 
-    // Controlliamo se la risposta è corretta
     if (!response.ok) {
       throw new Error("Errore nel recuperare i dati");
     }
 
-    // Parliamo i dati in formato JSON
     const data = await response.json();
-
-    // Controlliamo la struttura dei dati per capire come manipolarli
-    console.log(data); // Controlla la struttura della risposta dell'API
-
-    // Estraiamo i mostri dalla risposta
-    const monsters = data.results; // Assumiamo che i mostri siano nella proprietà 'results'
-
-    // Prendiamo solo i primi 10 mostri (se ci sono abbastanza mostri)
+    const monsters = data.results;
     const topMonsters = monsters.slice(0, 10);
 
-    // Creiamo un contenitore per visualizzare i mostri
     const container = document.getElementById("monster-container");
-    container.innerHTML = ""; // Pulisce il contenitore prima di aggiungere nuovi mostri
+    container.innerHTML = "";
 
-    // Cicliamo su ciascun mostro e lo aggiungiamo al DOM
+    // Funzione per normalizzare il nome del mostro e creare l'URL dell'immagine
+    function formatMonsterName(name) {
+      return name
+        .toLowerCase()
+        .replace(/ /g, "-") // sostituisce spazi con trattini
+        .replace(/'/g, "") // rimuove apostrofi
+        .replace(/,/g, "") // rimuove virgole
+        .replace(/\./g, "") // rimuove punti
+        .replace(/&/g, "and"); // sostituisce & con "and"
+    }
+
     topMonsters.forEach((monster) => {
       const monsterElement = document.createElement("div");
       monsterElement.classList.add("monster");
 
       const monsterName = monster.name || "Nome sconosciuto";
-      const monsterImage = monster.url || "https://via.placeholder.com/150"; // Usa un'immagine di default se manca
+      const monsterImageUrl = `https://www.dnd5eapi.co/api/2014/images/monsters/${formatMonsterName(
+        monsterName
+      )}.png`;
 
-      // Aggiungiamo il markup HTML per ciascun mostro
       monsterElement.innerHTML = `
         <h3>${monsterName}</h3>
-        <img url="${monsterImage}" alt="${monsterName}" width="200" />
+        <img src="${monsterImageUrl}" alt="${monsterName}" width="200" onerror="this.src='https://via.placeholder.com/150';" />
       `;
       container.appendChild(monsterElement);
     });
@@ -156,7 +156,6 @@ async function fetchMonsters() {
   }
 }
 
-// Chiamata alla funzione per fetchare e renderizzare i mostri
 fetchMonsters();
 
 //data dinamica

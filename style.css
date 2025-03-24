@@ -399,3 +399,12 @@ footer {
   color: aliceblue;
   cursor: url("assets/cursore.png"), auto;
 }
+
+.monster {
+  border: solid 3px red;
+  width: 250px;
+  min-width: 200px;
+}
+.monster > img {
+  width: 100%;
+}
