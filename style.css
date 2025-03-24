@@ -15,6 +15,59 @@ html {
   color: white;
   border-radius: 5px;
 }
+
+/* Contenitore del carosello */
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin: auto; /* Centra il contenitore */
+  border: 2px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  gap: 5px;
+}
+
+/* Item del carosello */
+.carousel-item {
+  display: none;
+  text-align: center;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-item h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Mostra il primo elemento */
+.carousel-item.active {
+  display: block;
+}
+
+/* Pulsanti del carosello */
+.carousel-controls {
+  margin-top: 10px;
+}
+*/ #pre #next {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+:hover #prev #next {
+  background-color: #0056b3;
+}
 .menu-dropdown {
   display: none;
   position: absolute;
@@ -217,10 +270,7 @@ header p {
   font-size: 25px;
   -webkit-text-stroke: 1px rgb(174, 172, 172);
 }
-.negozio-gioco {
-  border: #9d0a0e solid 5px;
-  border-radius: 10px;
-}
+
 .negozio-accessori {
   background-image: url(assets/negozio-gadget.jpeg);
   background-repeat: no-repeat;

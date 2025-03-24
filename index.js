@@ -105,57 +105,69 @@ function createImageGallery(outputId) {
   });
 }
 
-// Funzione per fare la fetch dei mostri
-async function fetchMonsters() {
+async function fetchMonstersForCarousel() {
   try {
-    // Eseguiamo la fetch all'API dei mostri
     const response = await fetch("https://www.dnd5eapi.co/api/monsters");
-
     if (!response.ok) {
-      throw new Error("Errore nel recuperare i dati");
+      throw new Error("Errore durante la fetch dei mostri.");
     }
 
     const data = await response.json();
-    const monsters = data.results;
-    const topMonsters = monsters.slice(0, 10);
+    const monsters = data.results.slice(0, 10); // Prendi i primi 10 mostri
+    const carouselContainer = document.getElementById("monster-carousel");
 
-    const container = document.getElementById("monster-container");
-    container.innerHTML = "";
+    // Aggiunta dinamica delle card
+    monsters.forEach((monster, index) => {
+      const item = document.createElement("div");
+      item.classList.add("carousel-item");
 
-    // Funzione per normalizzare il nome del mostro e creare l'URL dell'immagine
-    function formatMonsterName(name) {
-      return name
-        .toLowerCase()
-        .replace(/ /g, "-") // sostituisce spazi con trattini
-        .replace(/'/g, "") // rimuove apostrofi
-        .replace(/,/g, "") // rimuove virgole
-        .replace(/\./g, "") // rimuove punti
-        .replace(/&/g, "and"); // sostituisce & con "and"
+      item.innerHTML = `
+        <h3>${monster.name}</h3>
+        <img src="https://www.dnd5eapi.co/api/2014/images/monsters/${monster.name
+          .toLowerCase()
+          .replace(/ /g, "-")
+          .replace(/'/g, "")
+          .replace(/,/g, "")
+          .replace(/&/g, "and")}.png" 
+          alt="${monster.name}" 
+          onerror="this.src='https://via.placeholder.com/150';" />
+      `;
+      carouselContainer.appendChild(item);
+    });
+
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".carousel-item");
+
+    // Funzione per aggiornare il carosello
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        // Mostra o nasconde gli elementi in base alla posizione
+        item.style.display =
+          index >= currentIndex && index < currentIndex + 3 ? "block" : "none";
+      });
     }
 
-    topMonsters.forEach((monster) => {
-      const monsterElement = document.createElement("div");
-      monsterElement.classList.add("monster");
-
-      const monsterName = monster.name || "Nome sconosciuto";
-      const monsterImageUrl = `https://www.dnd5eapi.co/api/2014/images/monsters/${formatMonsterName(
-        monsterName
-      )}.png`;
-
-      monsterElement.innerHTML = `
-        <h3>${monsterName}</h3>
-        <img src="${monsterImageUrl}" alt="${monsterName}" width="200" onerror="this.src='https://via.placeholder.com/150';" />
-      `;
-      container.appendChild(monsterElement);
+    // Eventi per i bottoni
+    document.getElementById("prev").addEventListener("click", () => {
+      currentIndex = (currentIndex - 3 + items.length) % items.length;
+      updateCarousel();
     });
+
+    document.getElementById("next").addEventListener("click", () => {
+      currentIndex = (currentIndex + 3) % items.length;
+      updateCarousel();
+    });
+
+    updateCarousel(); // Inizializza il carosello
   } catch (error) {
-    console.error(
-      "Si è verificato un errore durante la fetch dei mostri:",
-      error
-    );
+    console.error("Errore:", error);
   }
 }
 
+// Inizializza il carosello
+fetchMonstersForCarousel();
+
+// Chiamata alla funzione per fetchare e renderizzare i mostri
 fetchMonsters();
 
 //data dinamica
