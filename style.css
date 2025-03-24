@@ -17,38 +17,44 @@ html {
 }
 
 /* Contenitore del carosello */
+/*  */
+
 .carousel {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   overflow: hidden;
-  margin: auto; /* Centra il contenitore */
-  border: 2px solid #ccc;
-  background-color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   padding: 10px;
-  gap: 5px;
+  gap: 20px;
 }
-
-/* Item del carosello */
+/* Singola card */
 .carousel-item {
-  display: none;
+  flex: 0 0 calc(33.33% - 20px); /* Ogni card occupa un terzo dello spazio con margini */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  aspect-ratio: 4 / 3; /* Mantieni le proporzioni (larghezza/altezza) */
 }
 
+.carousel-item:hover {
+  transform: scale(1.05); /* Effetto di ingrandimento su hover */
+}
+
+/* Immagini dentro la card */
 .carousel-item img {
-  max-width: 100%;
+  width: 100%; /* L'immagine occupa tutta la larghezza della card */
   height: auto;
   border-radius: 10px;
-}
-
-.carousel-item h3 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-/* Mostra il primo elemento */
-.carousel-item.active {
-  display: block;
 }
 
 /* Pulsanti del carosello */
