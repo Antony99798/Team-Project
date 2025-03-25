@@ -1,4 +1,70 @@
+//data dinamica
+document.getElementById("anno").textContent = new Date().getFullYear();
 //Navbar dinamica
+
+// Array di oggetti
+const items = [
+  {
+    nome: "Dadi Da Gioco",
+    immagine:
+      "https://everhearthinn.com/wp-content/uploads/2022/06/Dwarven-Hammer-Copper-Metal-DnD-Dice-Set.webp",
+    prezzo: 15.99 + "€",
+  },
+  {
+    nome: "Torre Lancia Dadi",
+    immagine:
+      "https://i.etsystatic.com/19673862/r/il/600bff/5729843021/il_570xN.5729843021_ryv6.jpg",
+    prezzo: 39.99 + "€",
+  },
+  {
+    nome: "Pedine Guerrieri",
+    immagine:
+      "https://weprintminiatures.com/cdn/shop/collections/dungeons-and-dragons-miniatures-403784_1024x1024.jpg?v=1696606504",
+    prezzo: 5.99 + "€ (CAD)",
+  },
+  {
+    nome: "Scrigno Per Dadi",
+    immagine:
+      "https://i.etsystatic.com/30215457/r/il/519a28/5098268074/il_fullxfull.5098268074_aog1.jpg",
+    prezzo: 30 + "€",
+  },
+  {
+    nome: "Set Mappa Di Gioco",
+    immagine:
+      "https://149455152.v2.pressablecdn.com/wp-content/uploads/2021/01/Exteriors.jpg",
+    prezzo: 12 + "€",
+  },
+  {
+    nome: "Portachiavi",
+    immagine:
+      "https://i.etsystatic.com/9665931/r/il/47afd6/4444301092/il_340x270.4444301092_rphf.jpg",
+    prezzo: 4.99 + "€ (CAD)",
+  },
+];
+
+// Selezione del contenitore
+const container = document.getElementById("cardContainer");
+
+// Funzione per creare le card
+function renderCards(items) {
+  items.forEach((item) => {
+    // Creazione di ogni elemento della card
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+    <h3>${item.nome}</h3>
+      <img src="${item.immagine}" alt="${item.nome}">
+      <p>Prezzo: ${item.prezzo}</p>
+    `;
+
+    // Aggiungere la card al contenitore
+    container.appendChild(card);
+  });
+}
+
+// Rendering delle card
+renderCards(items);
 
 // Funzione per creare il paragrafo in "About us"
 document.getElementById("aboutus").addEventListener("click", function () {
@@ -113,7 +179,7 @@ async function fetchMonstersForCarousel() {
     }
 
     const data = await response.json();
-    const monsters = data.results.slice(0, 10); // Prendi i primi 10 mostri
+    const monsters = data.results.slice(2, 23); // Prendi i primi 10 mostri
     const carouselContainer = document.getElementById("monster-carousel");
 
     // Aggiunta dinamica delle card
@@ -169,6 +235,3 @@ fetchMonstersForCarousel();
 
 // Chiamata alla funzione per fetchare e renderizzare i mostri
 fetchMonsters();
-
-//data dinamica
-document.getElementById("anno").textContent = new Date().getFullYear();
