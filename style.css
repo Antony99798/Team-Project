@@ -26,6 +26,7 @@ html {
   width: 100%;
   gap: 20px;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 /* Singola card */
 .carousel-item {
@@ -504,8 +505,10 @@ footer {
 .card > img {
   width: 100%;
   height: 100%;
+ 
 }
 .card {
+  min-width: 150px;
   flex: 0 0 calc(25%); /* Ogni card occupa un terzo dello spazio con margini */
   margin-bottom: 20px;
   font-size: 25px;
@@ -523,4 +526,67 @@ footer {
 }
 .card:hover {
   transform: scale(1.05); /* Effetto di ingrandimento su hover */
+}
+.hero-descrizione-2 ,.titolo-hero-2{
+  display: none;
+}
+
+@media (max-width:1200px){
+  .hero-descrizione {
+  font-size: 20px;
+  padding: 0px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  width: 100%;
+  gap: 10px;
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+}
+.hero-descrizione p{
+  padding: 50px;
+}
+.hero-descrizione h1 {
+padding: 50px;
+padding-bottom: 20px;
+}
+}
+@media (max-width:850px){
+  .hero-descrizione-2, .titolo-hero-2{
+    background-image: url(assets/bg-navbar.jpeg);
+    border-bottom: 5px solid #9d0a0e;
+    color: aliceblue;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .hero-descrizione, .titolo-hero{
+    display: none;
+  }
+  .hero-container{
+    height: 300px;
+  }
+  .hero{
+height: 300px;
+  }
+}
+@media (max-width:750px){
+  .container-link{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 20px;
+  }
+  .lista-footer{
+    padding: 0;
+  }
+}
+@media (max-width:530px){
+  header{
+    display: flex;
+    flex-direction: column;
+  }
 }
