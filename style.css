@@ -126,6 +126,46 @@ html {
 .menu-dropdown a:hover {
   background-color: #ddd;
 }
+.carrello-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+.carrello-container:hover .menu-dropdown3 {
+  display: block;
+}
+.menu-dropdown3 {
+  max-height: 300px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background-color: aliceblue;
+  color: black;
+  max-width: 300px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 100;
+  border: #9d0a0e 3px solid;
+  padding: 10px;
+  overflow: scroll;
+}
+.menu-dropdown3 img {
+  width: 150px;
+}
+.menu-dropdown3 p {
+  color: black;
+}
+#acq-carrello {
+  margin-top: 10px;
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  border: solid #9d0a0e 2px;
+  color: aliceblue;
+  width: 100%;
+}
 .navigazione-container:hover .menu-dropdown {
   display: block;
 }
@@ -255,7 +295,6 @@ header p {
 .hero-descrizione {
   font-size: 20px;
   padding: 20px;
-  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   color: aliceblue;
@@ -270,7 +309,7 @@ header p {
   padding-top: 50px;
 }
 .hero-descrizione p {
-  font-size: 22px;
+  font-size: 25px;
   margin: 0;
 }
 .centro {
@@ -289,7 +328,7 @@ header p {
 }
 
 .gioco {
-  background-image: url(assets/descrizione\ gioco.jpeg);
+  background-image: url(assets/descrizione-gioco.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   border: #9d0a0e solid 5px;
@@ -302,7 +341,7 @@ header p {
 .gioco > p {
   padding: 35px;
   color: aliceblue;
-  font-size: 25px;
+  font-size: 30px;
   -webkit-text-stroke: 1px rgb(174, 172, 172);
 }
 
@@ -571,8 +610,10 @@ footer {
     margin: 0;
     padding: 10px;
     display: block;
+    font-size: 25px;
   }
   .titolo-hero-2 {
+    font-size: 40px;
     --header-color: var(--white);
     --decor-line-color: linear-gradient(
       90deg,

@@ -2,7 +2,7 @@
 document.getElementById("anno").textContent = new Date().getFullYear();
 //Navbar dinamica
 
-// Array di oggetti
+// Array di oggetti del carrello
 const items = [
   {
     nome: "Dadi Da Gioco",
@@ -44,7 +44,29 @@ const items = [
 
 // Selezione del contenitore
 const container = document.getElementById("cardContainer");
+const carrelloLista = document.getElementById("carrello-lista");
+
 const selectedItems = new Set(); // Set per memorizzare gli elementi selezionati
+
+// Funzione per aggiornare il carrello
+function aggiornaCarrello() {
+  carrelloLista.innerHTML = ""; // Svuota il carrello
+
+  // Aggiungi ogni elemento selezionato al carrello
+  selectedItems.forEach((item) => {
+    const carrelloItem = document.createElement("div");
+    carrelloItem.classList.add("carrello-item");
+
+    // Costruzione del contenuto del carrello
+    carrelloItem.innerHTML = `
+      <img src="${item.immagine}" alt="${item.nome}" class="carrello-immagine">
+      <p>${item.nome}</p>
+      <p>${item.prezzo}</p>
+    `;
+
+    carrelloLista.appendChild(carrelloItem); // Aggiungi l'elemento al carrello
+  });
+}
 
 // Funzione per creare le card
 function renderCards(items) {
@@ -63,7 +85,7 @@ function renderCards(items) {
       } else {
         selectedItems.delete(items[itemIndex]); // Rimuovi se deselezionato
       }
-      console.log([...selectedItems]); // Stampa gli elementi selezionati (può essere usato per aggiornare il carrello)
+      aggiornaCarrello(); // Aggiorna il carrello ogni volta che cambia la selezione
     });
 
     // Costruzione della card
@@ -78,12 +100,8 @@ function renderCards(items) {
   });
 }
 
-// Rendering delle card
+// Rendering delle card iniziale
 renderCards(items);
-
-
-
-
 
 // Funzione per creare il paragrafo in "About us"
 document.getElementById("aboutus").addEventListener("click", function () {
