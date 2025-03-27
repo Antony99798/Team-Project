@@ -523,10 +523,12 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease-in-out;
+  align-items: center;
 }
 .card img {
   max-width: fit-content;
   aspect-ratio: 1/1;
+  max-width: 340px;
 }
 .card:hover {
   transform: scale(1.05); /* Effetto di ingrandimento su hover */
