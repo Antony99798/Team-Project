@@ -100,6 +100,7 @@ html {
   width: 50px;
   border: 2px solid black;
   border-radius: 50px;
+  cursor: pointer;
 }
 :hover #prev #next {
   background-color: #0056b3;
@@ -153,10 +154,11 @@ html {
   overflow: scroll;
 }
 .menu-dropdown3 img {
-  width: 150px;
+  width: 70px;
 }
 .menu-dropdown3 p {
   color: black;
+  font-size: 13px;
 }
 #acq-carrello {
   margin-top: 10px;
@@ -721,4 +723,9 @@ footer {
   .corpo {
     margin-top: 257px;
   }
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
 }
